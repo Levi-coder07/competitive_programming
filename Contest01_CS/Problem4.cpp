@@ -1,37 +1,44 @@
 #include <iostream>
 #include <map>
 #include <set>
+
 using namespace std;
 
 int main(){
-    int n;
-    int maxino;
-    int course;
-    int *Total;
+    int maximo,popularity,students,n,course;
     while(cin>>n){
         if(n==0){break;}
         else{
-            map<set<int, greater<int>>,int> uni;
-            set<int,greater<int> > courses;
-            map<set<int, greater<int>>,int>::iterator it;
-            set<int,greater<int> >::iterator itr;
+            map<set<int>,int> uni;
+            //map<int*,int> uni;
+            maximo = 0;
             for(int i = 0;i<n;i++){
+                set<int> courses;
+                
                 for(int i = 0 ;i<5;i++){
                     cin>>course;
                     courses.insert(course);
-                    
                 }
-            }
-            for(it=uni.begin();it!=uni.end();++it){
-                    cout<<it->first<<endl;      
+                uni[courses]++;
                 
             }
-
+            students = 0;
+            map<set<int>,int> :: const_iterator it;
+            for(it=uni.begin();it!=uni.end();++it)
+            {
+                if(it->second>maximo)
+                {
+                    maximo=it->second;
+                }
+            }
+            for(it=uni.begin();it!=uni.end();++it)
+            {
+                if((it->second)==maximo)
+                {
+                    students = students + (it->second);
+                }
+            }
         }
-    }
-        
-        cout<<endl;
-    
-
-      
+        cout<<students<<endl;  
+    }    
 }
