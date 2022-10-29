@@ -13,11 +13,11 @@ int main(){
             if(size-pos[j]>pos[j]){
                 min = max(pos[j],min);
                 max1 = max(size-pos[j],max1);
-                cout<<"Maximo : "<<max1<<endl;
+                
             }else{
                 min = max(size-pos[j],min);
                 max1 = max(pos[j],max1);
-                cout<<"Maximo : "<<max1<<endl;
+                
             }
             
         }
