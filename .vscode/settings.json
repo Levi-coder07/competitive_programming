@@ -3,7 +3,8 @@
     "iostream": "cpp",
     "set": "cpp",
     "xstddef": "cpp",
-    "map": "cpp"
+    "map": "cpp",
+    "cstdlib": "cpp"
   },
   "C_Cpp.errorSquiggles": "disabled"
 }
